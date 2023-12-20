@@ -23,11 +23,12 @@ class SigninBody extends GetView<SigninController> {
           key: controller.formKey,
           child: ListView(
             children: [
+              SizedBox(height: Get.height * .05),
               LogoWidget(
-                height: Get.height * .25,
+                height: Get.height * .15,
                 width: Get.height * .15,
               ),
-              SizedBox(height: Get.height * .10),
+              SizedBox(height: Get.height * .22),
               Text(
                 "Sign in to your account",
                 textAlign: TextAlign.center,

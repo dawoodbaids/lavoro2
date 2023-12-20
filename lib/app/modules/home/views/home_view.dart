@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../global_widgets/custom_drawer.dart';
 import '../widgets/home_appbar.dart';
 import '../widgets/home_body.dart';

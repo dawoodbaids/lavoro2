@@ -18,7 +18,7 @@ class RegisterController extends GetxController {
   late TextEditingController usernameController;
   late TextEditingController statusController;
   late TextEditingController jobController;
-
+  late TextEditingController emailController;
   String? imagePath;
 
   @override
@@ -26,7 +26,7 @@ class RegisterController extends GetxController {
     usernameController = TextEditingController();
     statusController = TextEditingController();
     jobController = TextEditingController();
-
+    emailController = TextEditingController();
     user = Get.arguments['user'];
 
     super.onInit();
@@ -60,6 +60,7 @@ class RegisterController extends GetxController {
         status: statusController.text,
         phoneNumber: user!.phoneNumber ?? '',
         jobDescrption: jobController.text,
+        email: emailController.text,
       );
 
       await UserFirebase.setUser(userAccount: userAccount);

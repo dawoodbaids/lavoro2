@@ -49,6 +49,10 @@ class RegisterBody extends GetView<RegisterController> {
                 label: "Status",
               ),
               CustomTextFormField(
+                controller: controller.emailController,
+                label: "Email",
+              ),
+              CustomTextFormField(
                 controller: controller.jobController,
                 label: "Job Descrption",
               ),

@@ -14,7 +14,7 @@ class UserAccount extends GetxController {
   String imageUrl;
   String phoneNumber;
   String jobDescrption;
-
+  String email;
   List<UserAccount> friends;
 
   UserAccount({
@@ -25,6 +25,7 @@ class UserAccount extends GetxController {
     this.phoneNumber = '',
     this.friends = const [],
     this.jobDescrption = '',
+    this.email = '',
   });
 
   static final Rx<UserAccount?> _currentUser = Rx<UserAccount?>(null);
@@ -66,19 +67,20 @@ class UserAccount extends GetxController {
       'imageUrl': imageUrl,
       'phoneNumber': phoneNumber,
       'jobDescrption': jobDescrption,
+      'email': email,
     };
   }
 
   factory UserAccount.fromMap(
       {required String uuid, required Map<String, dynamic> map}) {
     return UserAccount(
-      uid: uuid,
-      username: map['username'] as String,
-      status: map['status'] as String,
-      imageUrl: map['imageUrl'] as String,
-      phoneNumber: map['phoneNumber'] as String,
-      jobDescrption: map['jobDescrption'] as String,
-    );
+        uid: uuid,
+        username: map['username'] as String,
+        status: map['status'] as String,
+        imageUrl: map['imageUrl'] as String,
+        phoneNumber: map['phoneNumber'] as String,
+        jobDescrption: map['jobDescrption'] as String,
+        email: map['email'] as String);
   }
 
   static UserAccount? fromDoc(DocumentSnapshot doc) {
@@ -98,7 +100,7 @@ class UserAccount extends GetxController {
     String? imageUrl,
     String? phoneNumber,
     String? jobDescrption,
-
+    String? email,
   }) {
     return UserAccount(
       uid: uid ?? this.uid,
@@ -107,6 +109,7 @@ class UserAccount extends GetxController {
       imageUrl: imageUrl ?? this.imageUrl,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       jobDescrption: jobDescrption ?? this.jobDescrption,
+      email: email ?? this.email,
     );
   }
 
